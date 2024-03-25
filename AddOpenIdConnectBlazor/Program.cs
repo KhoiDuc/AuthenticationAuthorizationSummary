@@ -1,4 +1,6 @@
 using AddOpenIdConnectBlazor.Data;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 
@@ -8,6 +10,25 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
+
+builder.Services.AddAuthentication(authOptions =>
+{
+    authOptions.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    authOptions.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    authOptions.DefaultSignOutScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    authOptions.DefaultChallengeScheme = OpenIdConnectDefaults.AuthenticationScheme;
+}).AddOpenIdConnect(oidcOptions => {
+    oidcOptions.ClientId = builder.Configuration["Okta:ClientId"];
+    oidcOptions.ClientSecret = builder.Configuration["Okta:ClientSecret"];
+    oidcOptions.CallbackPath = "/authorization-code/callback";
+    oidcOptions.Authority = builder.Configuration["Okta:Issuer"];
+    oidcOptions.ResponseType = "code";
+    oidcOptions.SaveTokens = true;
+    oidcOptions.Scope.Add("openid");
+    oidcOptions.Scope.Add("profile");
+    oidcOptions.TokenValidationParameters.ValidateIssuer = false;
+    oidcOptions.TokenValidationParameters.NameClaimType = "name";
+}).AddCookie();
 
 var app = builder.Build();
 
@@ -25,7 +46,12 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.MapControllers();
 app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
 
 app.Run();
+
