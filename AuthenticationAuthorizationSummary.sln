@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OktaMVCLogin", "OktaMVCLogin\OktaMVCLogin.csproj", "{431D70DB-5E5F-4215-B096-10189D53FB53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddOpenIdConnectBlazor", "AddOpenIdConnectBlazor\AddOpenIdConnectBlazor.csproj", "{A38414C6-41D1-4968-B49E-75009004B401}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{431D70DB-5E5F-4215-B096-10189D53FB53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{431D70DB-5E5F-4215-B096-10189D53FB53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{431D70DB-5E5F-4215-B096-10189D53FB53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{431D70DB-5E5F-4215-B096-10189D53FB53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A38414C6-41D1-4968-B49E-75009004B401}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A38414C6-41D1-4968-B49E-75009004B401}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A38414C6-41D1-4968-B49E-75009004B401}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A38414C6-41D1-4968-B49E-75009004B401}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {380F666F-B726-4A57-A71E-56D0FA95A028}
+	EndGlobalSection
+EndGlobal
