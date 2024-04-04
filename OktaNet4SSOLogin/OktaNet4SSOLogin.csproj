@@ -47,6 +47,9 @@
     <Reference Include="AspNet.Security.OpenIdConnect.Primitives, Version=2.0.0.0, Culture=neutral, PublicKeyToken=fa9e7b608b196fab, processorArchitecture=MSIL">
       <HintPath>..\packages\AspNet.Security.OpenIdConnect.Primitives.2.0.0\lib\netstandard2.0\AspNet.Security.OpenIdConnect.Primitives.dll</HintPath>
     </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="IdentityModel, Version=3.9.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\IdentityModel.3.9.0\lib\net452\IdentityModel.dll</HintPath>
     </Reference>

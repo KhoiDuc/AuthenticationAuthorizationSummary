@@ -56,7 +56,10 @@ namespace OktaNet4SSOLogin.Controllers
             // For demonstration purposes, let's assume the login is successful if the username and password are both "admin"
             return username == "admin" && password == "admin";
         }
-
+        private bool IsAdmin()
+        {
+            return ClaimsPrincipal.Current.IsInRole("");
+        }
 
         [HttpPost]
         public ActionResult Logout()
