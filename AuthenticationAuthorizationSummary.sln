@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AddOpenIdConnectBlazor", "A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OktaNet4SSOLogin", "OktaNet4SSOLogin\OktaNet4SSOLogin.csproj", "{61C30F62-A870-4A03-9352-1333C0932B46}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenerateKeyEncryptDecrypt", "GenerateKeyEncryptDecrypt\GenerateKeyEncryptDecrypt.csproj", "{C00E5695-C3F1-4EE6-90D2-AB73A663DBE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenerateKeyEncryptDecryptNet4", "GenerateKeyEncryptDecryptNet4\GenerateKeyEncryptDecryptNet4.csproj", "{B248B70F-4C05-4772-BAF7-4C54D004ECD2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{61C30F62-A870-4A03-9352-1333C0932B46}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61C30F62-A870-4A03-9352-1333C0932B46}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61C30F62-A870-4A03-9352-1333C0932B46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C00E5695-C3F1-4EE6-90D2-AB73A663DBE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C00E5695-C3F1-4EE6-90D2-AB73A663DBE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C00E5695-C3F1-4EE6-90D2-AB73A663DBE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C00E5695-C3F1-4EE6-90D2-AB73A663DBE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B248B70F-4C05-4772-BAF7-4C54D004ECD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B248B70F-4C05-4772-BAF7-4C54D004ECD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B248B70F-4C05-4772-BAF7-4C54D004ECD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B248B70F-4C05-4772-BAF7-4C54D004ECD2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
