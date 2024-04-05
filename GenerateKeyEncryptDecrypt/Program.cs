@@ -84,14 +84,14 @@ namespace GenerateKeyEncryptDecrypt
 
                     case ConsoleKey.D2:
                         Console.WriteLine("\nReading from file: pemFile.pem");
-                        string wholePem = File.ReadAllText("Keys\\Public Key.pem");
+                        string wholePem = File.ReadAllText("Keys\\Private Key.pem");
                         if (string.IsNullOrWhiteSpace(wholePem))
                         {
                             Console.WriteLine("Enter something next time, dumbass!\n\n");
                             break;
                         }
                         // XML value file
-                        // Console.WriteLine($"\n{RsaKeyConverter.GetRsaParametersAsXml(wholePem)}\n\n");
+                        //Console.WriteLine($"\n{RsaKeyConverter.GetRsaParametersAsXml(wholePem)}\n\n");
                         // XML value format
                         Console.WriteLine($"\n{RsaKeyConverter.PemToXml(wholePem)}\n\n");
                         break;

@@ -46,6 +46,11 @@ public static class RsaKeyConverter
         }
     }
 
+    /// <summary>
+    /// Gets the rsa parameters as xml.
+    /// </summary>
+    /// <param name="rsaPrivateKey">The rsa private key.</param>
+    /// <returns>A string.</returns>
     public static string GetRsaParametersAsXml(string rsaPrivateKey)
     {
         try
@@ -69,27 +74,38 @@ public static class RsaKeyConverter
             throw new Exception("Failed to convert RSA parameters to XML", ex);
         }
     }
+    /// <summary>
+    /// Gets the rsa parameters and convert to xml.
+    /// </summary>
+    /// <param name="pem">The pem.</param>
+    /// <returns>A string.</returns>
+    private static string GetRsaParametersAndConvertToXml(string pem)
+    {
+        var rsaParams = GetRsaParameters(pem);
+        using (var rsa = new RSACryptoServiceProvider())
+        {
+            rsa.ImportParameters(rsaParams);
+            return rsa.ToXmlString(true);
+        }
+    }
 
     public static string PemToXml(string pem, bool newSolution = true)
     {
-        if (pem.StartsWith("-----BEGIN RSA PRIVATE KEY-----")
-            || pem.StartsWith("-----BEGIN PRIVATE KEY-----"))
+        if (pem.StartsWith("-----BEGIN RSA PRIVATE KEY-----") || pem.StartsWith("-----BEGIN PRIVATE KEY-----"))
         {
-            if(newSolution)
+            if (pem.StartsWith("-----BEGIN RSA PRIVATE KEY-----"))
             {
-                //return GetRsaParametersAsXml(pem);
-                var a = GetRsaParameters(pem);
-                RSACryptoServiceProvider rsa = new RSACryptoServiceProvider();
-                rsa.ImportParameters(a);
-                return rsa.ToXmlString(true);
+                return newSolution ? GetRsaParametersAsXml(pem) : GetRsaParametersAndConvertToXml(pem);
             }
-            return GetXmlRsaKey(pem, obj =>
-            {
-                if ((obj as RsaPrivateCrtKeyParameters) != null)
-                    return DotNetUtilities.ToRSA((RsaPrivateCrtKeyParameters)obj);
-                var keyPair = (AsymmetricCipherKeyPair)obj;
-                return DotNetUtilities.ToRSA((RsaPrivateCrtKeyParameters)keyPair.Private);
-            }, rsa => rsa.ToXmlString(true));
+            else {
+                return GetXmlRsaKey(pem, obj =>
+                {
+                    if (obj is RsaPrivateCrtKeyParameters)
+                        return DotNetUtilities.ToRSA((RsaPrivateCrtKeyParameters)obj);
+                    var keyPair = (AsymmetricCipherKeyPair)obj;
+                    return DotNetUtilities.ToRSA((RsaPrivateCrtKeyParameters)keyPair.Private);
+                }, rsa => rsa.ToXmlString(true));
+            }
         }
 
         if (pem.StartsWith("-----BEGIN PUBLIC KEY-----"))
