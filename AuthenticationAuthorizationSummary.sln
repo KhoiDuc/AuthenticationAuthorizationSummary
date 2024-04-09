@@ -13,6 +13,26 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenerateKeyEncryptDecrypt",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenerateKeyEncryptDecryptNet4", "GenerateKeyEncryptDecryptNet4\GenerateKeyEncryptDecryptNet4.csproj", "{B248B70F-4C05-4772-BAF7-4C54D004ECD2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JoseJWTToken", "JoseJWTToken\JoseJWTToken.csproj", "{F1D9E2E5-8B72-4B8F-8230-0824707B3141}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JoseJWTToken.Test", "JoseJWTToken.Test\JoseJWTToken.Test.csproj", "{E10CF7D5-713B-4A46-9AFB-919B4FD069F3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetDevPackAspNetCoreDefault", "NetDevPackAspNetCoreDefault\NetDevPackAspNetCoreDefault.csproj", "{0E11E6D2-96A8-4647-83B2-161D6B6C01F4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F1CEA4E4-4999-4989-A659-1CFD84A6CC41}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetDevPack.Security.Jwt.AspNetCore", "JwtPlugin\NetDevPack.Security.Jwt.AspNetCore\NetDevPack.Security.Jwt.AspNetCore.csproj", "{D274B3A8-6C1C-4F01-ABAA-0C5DC88847F3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetDevPack.Security.Jwt.Core", "JwtPlugin\NetDevPack.Security.Jwt.Core\NetDevPack.Security.Jwt.Core.csproj", "{DCC75BCF-AE25-4DD8-9C36-47866433ADDE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetDevPack.Security.Jwt.IdentityServer4", "JwtPlugin\NetDevPack.Security.Jwt.IdentityServer4\NetDevPack.Security.Jwt.IdentityServer4.csproj", "{A31D2535-E91D-4544-8A65-05616D9C8E0E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetDevPack.Security.Jwt.Store.EntityFrameworkCore", "JwtPlugin\NetDevPack.Security.Jwt.Store.EntityFrameworkCore\NetDevPack.Security.Jwt.Store.EntityFrameworkCore.csproj", "{3FB7BF13-7901-4FD1-85D8-C850E08C929A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetDevPack.Security.Jwt.Store.FileSystem", "JwtPlugin\NetDevPack.Security.Jwt.Store.FileSystem\NetDevPack.Security.Jwt.Store.FileSystem.csproj", "{31895BA5-AD27-427F-A2CE-681EF6820770}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jwe-AspCore", "Jwe-AspCore\Jwe-AspCore.csproj", "{92971EB1-D5B8-48CC-B2CC-744A7D7DCE49}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +59,42 @@ Global
 		{B248B70F-4C05-4772-BAF7-4C54D004ECD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B248B70F-4C05-4772-BAF7-4C54D004ECD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B248B70F-4C05-4772-BAF7-4C54D004ECD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1D9E2E5-8B72-4B8F-8230-0824707B3141}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1D9E2E5-8B72-4B8F-8230-0824707B3141}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1D9E2E5-8B72-4B8F-8230-0824707B3141}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1D9E2E5-8B72-4B8F-8230-0824707B3141}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E10CF7D5-713B-4A46-9AFB-919B4FD069F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E10CF7D5-713B-4A46-9AFB-919B4FD069F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E10CF7D5-713B-4A46-9AFB-919B4FD069F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E10CF7D5-713B-4A46-9AFB-919B4FD069F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E11E6D2-96A8-4647-83B2-161D6B6C01F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E11E6D2-96A8-4647-83B2-161D6B6C01F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E11E6D2-96A8-4647-83B2-161D6B6C01F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E11E6D2-96A8-4647-83B2-161D6B6C01F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D274B3A8-6C1C-4F01-ABAA-0C5DC88847F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D274B3A8-6C1C-4F01-ABAA-0C5DC88847F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D274B3A8-6C1C-4F01-ABAA-0C5DC88847F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D274B3A8-6C1C-4F01-ABAA-0C5DC88847F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCC75BCF-AE25-4DD8-9C36-47866433ADDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCC75BCF-AE25-4DD8-9C36-47866433ADDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCC75BCF-AE25-4DD8-9C36-47866433ADDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCC75BCF-AE25-4DD8-9C36-47866433ADDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A31D2535-E91D-4544-8A65-05616D9C8E0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A31D2535-E91D-4544-8A65-05616D9C8E0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A31D2535-E91D-4544-8A65-05616D9C8E0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A31D2535-E91D-4544-8A65-05616D9C8E0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FB7BF13-7901-4FD1-85D8-C850E08C929A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FB7BF13-7901-4FD1-85D8-C850E08C929A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FB7BF13-7901-4FD1-85D8-C850E08C929A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FB7BF13-7901-4FD1-85D8-C850E08C929A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31895BA5-AD27-427F-A2CE-681EF6820770}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31895BA5-AD27-427F-A2CE-681EF6820770}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31895BA5-AD27-427F-A2CE-681EF6820770}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31895BA5-AD27-427F-A2CE-681EF6820770}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92971EB1-D5B8-48CC-B2CC-744A7D7DCE49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92971EB1-D5B8-48CC-B2CC-744A7D7DCE49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92971EB1-D5B8-48CC-B2CC-744A7D7DCE49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92971EB1-D5B8-48CC-B2CC-744A7D7DCE49}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
