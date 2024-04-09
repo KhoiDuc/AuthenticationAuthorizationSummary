@@ -1,0 +1,6 @@
+@Jwe_AspCore_HostAddress = http://localhost:5129
+
+GET {{Jwe_AspCore_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
