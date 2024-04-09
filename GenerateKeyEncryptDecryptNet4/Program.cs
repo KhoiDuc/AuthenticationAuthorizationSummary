@@ -17,6 +17,8 @@ using Org.BouncyCastle.X509;
 using System.Reflection;
 using Org.BouncyCastle.Asn1.Pkcs;
 using Org.BouncyCastle.OpenSsl;
+using System.Collections.Generic;
+using Jose;
 
 namespace GenerateKeyEncryptDecryptNet4
 {
@@ -29,7 +31,33 @@ namespace GenerateKeyEncryptDecryptNet4
 		static void Main(string[] args)
 		{
 			// testRSA();
-			testPemXML(args);
+			// testPemXML(args);
+			testSimpleGetJWTFromPrivateKey();
+
+		}
+
+		private static void testSimpleGetJWTFromPrivateKey()
+		{
+			//slorello89
+			string jwt = getJWT("218xyz8c-99ec-4xyz2-b2df-d2xyzxyzxb91", "PrivateKeyOld.pem");
+			Console.WriteLine(jwt);
+		}
+		internal static string getJWT(string appid, string privatekeyfile)
+		{
+			var tokenData = new byte[64];
+			var rng = RandomNumberGenerator.Create();
+			rng.GetBytes(tokenData);
+			var jwtTokenId = Convert.ToBase64String(tokenData);
+			var payload = new Dictionary<string, object>
+			{
+				{ "iat", (long) (DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalSeconds },
+				{ "application_id", appid },
+				{ "jti", jwtTokenId }
+			};
+			string privateKeyString = System.IO.File.ReadAllText(privatekeyfile);
+			var rsa = PemParse.DecodePEMKey(privateKeyString);
+			var jwtToken = Jose.JWT.Encode(payload, rsa, JwsAlgorithm.RS256);
+			return jwtToken;
 		}
 
 		private static void testPemXML(string[] args)
